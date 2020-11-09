@@ -53,9 +53,9 @@ const Popup = (props) => {
                         </div>
                         <div className="form_social">
                             <a href={links.TELEGRAM} target='_blank'><img src={telegram} alt="telegram" /></a>
-                            <Link to='#'><img src={whatsapp} alt="telegram" /></Link>
-                            <Link to='#'><img src={vk} alt="vk" /></Link>
-                            <Link to={links.INST} target='_blank'><img src={inst} alt="inst" /></Link>
+                            <a href={links.WHATSUP} target='_blank'><img src={whatsapp} alt="telegram" /></a>
+                            <a href={links.VK} target='_blank'><img src={vk} alt="vk" /></a>
+                            <a href={links.INST} target='_blank'><img src={inst} alt="inst" /></a>
                         </div>
                         <img className='form_bg' src={phoneBg} alt="phone" />
                     </form>
