@@ -10,7 +10,7 @@ import logo from '../../images/logo.png'
 const Footer = () => (
   <footer className="footer">
     <div className="footer_social">
-      <Link to='#'><img src={telegram} alt="telegram" /></Link>
+      <a href={links.TELEGRAM} target='_blank'><img src={telegram} alt="telegram" /></a>
       <Link to='#'><img src={whatsapp} alt="telegram" /></Link>
       <Link to='#'><img src={vk} alt="vk" /></Link>
       <Link to='#'><img src={inst} alt="inst" /></Link>

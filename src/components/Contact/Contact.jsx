@@ -8,6 +8,7 @@ import vk from '../../images/social-icons/vk2.png'
 import inst from '../../images/social-icons/inst2.png'
 import "./contact.css"
 import "./contact-form.css"
+import axios from "axios"
 
 class Contact extends React.Component{
   constructor(props){
@@ -17,21 +18,53 @@ class Contact extends React.Component{
       phone: '',
       email: ''
     }
+    this.nameHandler = this.nameHandler.bind(this)
+    this.phoneHandler = this.phoneHandler.bind(this)
+    this.emailHandler = this.emailHandler.bind(this)
+    this.submitHandler = this.submitHandler.bind(this)
   }
+  submitHandler(){
+    axios.post('https://webreznov.herokuapp.com/sendmailer', {
+      email: this.state.email,
+      message: `\n\nWEBREZNOV - landing.\nНовая заявка!\n\nИмя:${this.state.name}\nТелефон:${this.state.phone}\nПочта:${this.state.email}`
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  nameHandler(e){
+    this.setState({
+      name: e.target.value
+    })
+  }
+  phoneHandler(e){
+    this.setState({
+      phone: e.target.value
+    })
+  }
+  emailHandler(e){
+    this.setState({
+      email: e.target.value
+    })
+  }
+
   render(){
     return (
       <section className="contact" id="contact">
         <div className="container">
-          <form action="" className="form" id="form">
+          <form onSubmit={this.submitHandler} className="form" id="form">
             <div className="form_fields">
-              <input type="text" className='form_fields_input' placeholder='Ваше имя'/>
-              <InputMask mask="+7\999 999 99 99" maskChar="_" type="phone" className='form_fields_input' placeholder='Ваш телефон' />
-              <input type="email" className='form_fields_input' placeholder='Ваш email'/>
-              <input type="button" className='form_fields_btn' value="отправить" />
+              <input onChange={this.nameHandler} value={this.state.name} type="text" className='form_fields_input' placeholder='Ваше имя'/>
+              <InputMask onChange={this.phoneHandler} value={this.state.phone} mask="+7\999 999 99 99" maskChar="_" type="phone" className='form_fields_input' placeholder='Ваш телефон' />
+              <input onChange={this.emailHandler} value={this.state.email} type="email" className='form_fields_input' placeholder='Ваш email'/>
+              <input type="submit" className='form_fields_btn' value="отправить" />
             </div>
             <div className="form_social">
-              <Link to='#'><img src={telegram} alt="telegram" /></Link>
-              <Link to='#'><img src={whatsapp} alt="telegram" /></Link>
+              <a href={links.TELEGRAM} target='_blank'><img src={telegram} alt="telegram" /></a>
+              <Link to='#'><img src={whatsapp} alt="whatsup" /></Link>
               <div className="separate"></div>
               <Link to='#'><img src={vk} alt="vk" /></Link>
               <Link to='#'><img src={inst} alt="inst" /></Link>
