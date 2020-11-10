@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React, { useState } from "react"
 import InputMask from 'react-input-mask'
 
@@ -50,9 +49,9 @@ const Popup = (props) => {
                         <h2 className='form_title'>Оставьте свои контактные данные</h2>
                         <div className="form_fields">
                             {/* <input type="text" className='form_fields_input' placeholder='Ваше имя' /> */}
-                            <InputMask onChange={() => setNameInput()} value={nameInput} mask={mask} maskChar=" " type="text" className='form_fields_input' placeholder='Ваше имя' required />
-                            <InputMask onChange={() => setPhoneInput()} value={phoneInput} mask="+7\999 999 99 99" maskChar="_" type="phone" className='form_fields_input' placeholder='Ваш телефон' required />
-                            <input onChange={() => setEmailInput()} value={emailInput} type="email" className='form_fields_input' placeholder='Ваш email' required />
+                            <InputMask onChange={(e) => setNameInput(e.target.value)} value={nameInput} mask={mask} maskChar=" " type="text" className='form_fields_input' placeholder='Ваше имя' required />
+                            <InputMask onChange={(e) => setPhoneInput(e.target.value)} value={phoneInput} mask="+7\999 999 99 99" maskChar="_" type="phone" className='form_fields_input' placeholder='Ваш телефон' required />
+                            <input onChange={(e) => setEmailInput(e.target.value)} value={emailInput} type="email" className='form_fields_input' placeholder='Ваш email' required />
                             <input type="submit" className='form_fields_btn' value="отправить" />
                             <button onClickCapture={() => props.setShow(false)} className='form_close' title='закрыть окно'>X</button>
                             {/* <input style={{"display":"none"}} onChange={null} readOnly value={props.info}/> */}

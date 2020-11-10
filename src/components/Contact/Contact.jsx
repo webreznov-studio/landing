@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import InputMask from 'react-input-mask'
 
@@ -26,7 +25,6 @@ class Contact extends React.Component {
   }
   submitHandler(e) {
     e.preventDefault();
-    console.log(`!!!!!!!!contact.jsx\n\nWEBREZNOV - landing.\nНовая заявка!\n\nИмя:${this.state.name}\nТелефон:${this.state.phone}\nПочта:${this.state.email}`)
     axios.post('https://webreznov.herokuapp.com/sendmailer', {
       email: this.state.email,
       message: `\n\nWEBREZNOV - landing.\nНовая заявка!\n\nИмя:${this.state.name}\nТелефон:${this.state.phone}\nПочта:${this.state.email}`
