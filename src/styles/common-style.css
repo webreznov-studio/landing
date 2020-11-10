@@ -3,6 +3,7 @@
   src: local("robotolight"), url(../fonts/Roboto-Light.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   src: local("robotomedium"), url(../fonts/Roboto-Medium-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto-Medium-webfont.woff) format("woff"), url(../fonts/Roboto-Medium-webfont.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -19,6 +21,7 @@
   src: local("robotoregular"), url(../fonts/Roboto-Regular-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto-Regular-webfont.woff) format("woff"), url(../fonts/Roboto-Regular-webfont.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
