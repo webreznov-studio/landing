@@ -22,18 +22,24 @@ const Popup = (props) => {
 
     const handlerSendMail = (e) => {
         e.preventDefault();
+        console.log(`!!!!!!!!popup.jsx\n\n
+        WEBREZNOV - landing.\nНовая заявка!\n\n
+        Имя:${nameInput}\n
+        Телефон:${phoneInput}\n
+        Почта:${emailInput}`)
+
         axios
-        .post('https://webreznov.herokuapp.com/sendmailer', 
-        {
-            email: emailInput,
-            message: `email: ${emailInput}\nphone: ${phoneInput}`
-        })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+            .post('https://webreznov.herokuapp.com/sendmailer',
+                {
+                    email: emailInput,
+                    message: `name: ${nameInput}\nphone: ${phoneInput}`
+                })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     if (props.show) {
@@ -44,9 +50,9 @@ const Popup = (props) => {
                         <h2 className='form_title'>Оставьте свои контактные данные</h2>
                         <div className="form_fields">
                             {/* <input type="text" className='form_fields_input' placeholder='Ваше имя' /> */}
-                            <InputMask onChange={()=>setNameInput()} value={nameInput} mask={mask} maskChar=" " type="text" className='form_fields_input' placeholder='Ваше имя' required/>
-                            <InputMask onChange={()=>setPhoneInput()} value={phoneInput} mask="+7\999 999 99 99" maskChar="_" type="phone" className='form_fields_input' placeholder='Ваш телефон' required/>
-                            <input onChange={()=>setEmailInput()} value={emailInput} type="email" className='form_fields_input' placeholder='Ваш email' required/>
+                            <InputMask onChange={() => setNameInput()} value={nameInput} mask={mask} maskChar=" " type="text" className='form_fields_input' placeholder='Ваше имя' required />
+                            <InputMask onChange={() => setPhoneInput()} value={phoneInput} mask="+7\999 999 99 99" maskChar="_" type="phone" className='form_fields_input' placeholder='Ваш телефон' required />
+                            <input onChange={() => setEmailInput()} value={emailInput} type="email" className='form_fields_input' placeholder='Ваш email' required />
                             <input type="submit" className='form_fields_btn' value="отправить" />
                             <button onClickCapture={() => props.setShow(false)} className='form_close' title='закрыть окно'>X</button>
                             {/* <input style={{"display":"none"}} onChange={null} readOnly value={props.info}/> */}

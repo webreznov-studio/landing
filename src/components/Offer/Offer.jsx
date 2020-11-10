@@ -2,7 +2,7 @@ import React from "react"
 import "./offer.css"
 import macbook from '../../images/macbook_PNG50 1.png'
 import bgBottom from '../../images/Ellipse_12(2).png'
-import bgTop from '../../images/Rectangle 11.png'
+import bgTop from '../../images/Rectangle11.png'
 
 const Offer = (props) => (
   <>

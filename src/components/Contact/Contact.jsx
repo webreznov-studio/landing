@@ -24,7 +24,9 @@ class Contact extends React.Component {
     this.emailHandler = this.emailHandler.bind(this)
     this.submitHandler = this.submitHandler.bind(this)
   }
-  submitHandler() {
+  submitHandler(e) {
+    e.preventDefault();
+    console.log(`!!!!!!!!contact.jsx\n\nWEBREZNOV - landing.\nНовая заявка!\n\nИмя:${this.state.name}\nТелефон:${this.state.phone}\nПочта:${this.state.email}`)
     axios.post('https://webreznov.herokuapp.com/sendmailer', {
       email: this.state.email,
       message: `\n\nWEBREZNOV - landing.\nНовая заявка!\n\nИмя:${this.state.name}\nТелефон:${this.state.phone}\nПочта:${this.state.email}`
