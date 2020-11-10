@@ -21,12 +21,6 @@ const Popup = (props) => {
 
     const handlerSendMail = (e) => {
         e.preventDefault();
-        console.log(`!!!!!!!!popup.jsx\n\n
-        WEBREZNOV - landing.\nНовая заявка!\n\n
-        Имя:${nameInput}\n
-        Телефон:${phoneInput}\n
-        Почта:${emailInput}`)
-
         axios
             .post('https://webreznov.herokuapp.com/sendmailer',
                 {

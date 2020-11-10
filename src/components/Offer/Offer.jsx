@@ -1,8 +1,9 @@
 import React from "react"
 import "./offer.css"
 import macbook from '../../images/macbook_PNG50 1.png'
-import bgBottom from '../../images/Ellipse_12(2).png'
-import bgTop from '../../images/Rectangle11.png'
+// import bgBottom from '../../images/Ellipse_12(2).png'
+import bgBottom from '../../images/wave-black.png'
+import bgTop from '../../images/Rectangle11min.png'
 
 const Offer = (props) => (
   <>
@@ -25,10 +26,11 @@ const Offer = (props) => (
           <img src={macbook} alt="slider-bg" />
         </div>
       </div>
-    </section>
-    <div>
       <img className='bg-bottom' src={bgBottom} alt="bg-bottom" />
-    </div>
+    </section>
+    {/* <div>
+      <img className='bg-bottom' src={bgBottom} alt="bg-bottom" />
+    </div> */}
   </>
 )
 
